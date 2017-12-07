@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="app_twenty_five_dp">25dp</dimen>
+    <dimen name="app_Eighty_dp">80dp</dimen>
+    <dimen name="app_twenty_dp">20dp</dimen>
+    <dimen name="app_twenty_four_sp">24sp</dimen>
+    <dimen name="app_ten_dp">10dp</dimen>
+    <dimen name="app_sixteen_sp">16sp</dimen>
+    <dimen name="app_fourty_five_dp">45dp</dimen>
+    <dimen name="app_sixty_dp">60dp</dimen>
+    <dimen name="app_eighteen_sp">18sp</dimen>
+    <dimen name="app_one_dp">1dp</dimen>
+    <dimen name="app_two_hundred_dp">200dp</dimen>
+    <dimen name="app_five_dp">5dp</dimen>
+    <dimen name="app_fourteen_sp">14sp</dimen>
+    <dimen name="app_one_fifty_dp">150dp</dimen>
+    <dimen name="app_fourteen_dp">14dp</dimen>
+    <dimen name="app_fifty_dp">50dp</dimen>
+    <dimen name="app_fifteen_sp">15sp</dimen>
+    <dimen name="app_fourty_dp">40dp</dimen>
+    <dimen name="app_fifteen_dp">15dp</dimen>
+    <dimen name="app_twenty_sp">20sp</dimen>
+    <dimen name="app_two_dp">2dp</dimen>
+    <dimen name="app_thirty_dp">30dp</dimen>
+    <dimen name="app_three_hundred_dp">300dp</dimen>
+    <dimen name="app_thirteen_dp">13dp</dimen>
+    <dimen name="app_twenty_five_sp">25sp</dimen>
+    <dimen name="app_seventy_dp">70dp</dimen>
+    <dimen name="app_thirty_sp">30sp</dimen>
+    <dimen name="app_fourty_sp">40sp</dimen>
+    <dimen name="app_thirty_five_sp">35sp</dimen>
+    <dimen name="app_four_hundred_dp">400dp</dimen>
+    <dimen name="app_fifty_five_dp">55dp</dimen>
+    <dimen name="app_two_fifty_dp">250dp</dimen>
+    <dimen name="app_twenty_two_sp">22sp</dimen>
+    <dimen name="app_two_eighty_dp">280dp</dimen>
+    <dimen name="app_two_twenty_dp">220dp</dimen>
+    <dimen name="app_twelve_dp">12dp</dimen>
+    <dimen name="app_eighty_dp">80dp</dimen>
+    <dimen name="app_thirty_five_dp">35dp</dimen>
+    <dimen name="app_hundred_dp">100dp</dimen>
+    <dimen name="app_thirteen_sp">13sp</dimen>
+    <dimen name="app_twelve_sp">12sp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+
+
+    <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="app_thirty_two_dp">32dp</dimen>
+    <dimen name="app_one_sixty_dp">160dp</dimen>
+    <dimen name="app_one_seventy_dp">170dp</dimen>
+    <dimen name="app_sixteen_dp">16dp</dimen>
+    <dimen name="app_eight_dp">8dp</dimen>
+    <dimen name="app_ninty_dp">90dp</dimen>
+    <dimen name="app_zero_dp">0dp</dimen>
+    <dimen name="app_twenty_eight_dp">28dp</dimen>
+    <dimen name="app_twenty_six_dp">26dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="nav_header_height">200dp</dimen>
+    <dimen name="appbar_padding_top">8dp</dimen>
+    <dimen name="fivedp">5dp</dimen>
+</resources>

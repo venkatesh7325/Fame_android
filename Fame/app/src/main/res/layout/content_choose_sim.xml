@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.purpledot.fame.activites.loginModule.ChooseSimActivity"
+    tools:showIn="@layout/activity_choose_sim">
+
+    <TextView
+        android:id="@+id/verify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/app_fifty_dp"
+        android:text="Verify your Mobile Number"
+        android:textAlignment="center"
+        android:textColor="@color/app_black_buttons_bg_color"
+        android:textSize="@dimen/app_twenty_sp"
+        app:layout_constraintTop_toBottomOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_select_sim"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/fivedp"
+        android:layout_marginRight="@dimen/fivedp"
+        android:layout_marginTop="8dp"
+        android:text="Select a SIM which has the mobile number linked to FAME"
+        android:textAlignment="center"
+        android:textSize="@dimen/app_sixteen_sp"
+        app:layout_constraintTop_toBottomOf="@id/verify" />
+
+    <LinearLayout
+        android:id="@+id/ll_sim1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/app_ten_dp"
+        android:layout_marginRight="@dimen/app_ten_dp"
+        android:layout_marginTop="@dimen/app_thirty_dp"
+        android:background="@drawable/rounded_corners"
+        android:orientation="horizontal"
+        android:padding="@dimen/app_ten_dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_select_sim">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/sim_one" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/app_ten_dp"
+            android:text="SIM 1"
+            android:textColor="@color/app_black_buttons_bg_color"
+            android:textSize="@dimen/app_eighteen_sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_sim2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/app_ten_dp"
+        android:background="@drawable/rounded_corners"
+        android:orientation="horizontal"
+        android:padding="@dimen/app_ten_dp"
+        app:layout_constraintTop_toBottomOf="@id/ll_sim1">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/sim_two" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/app_ten_dp"
+            android:text="SIM 2"
+            android:textColor="@color/app_green_color"
+            android:textSize="@dimen/app_eighteen_sp" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

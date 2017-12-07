@@ -1,0 +1,149 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/fivedp"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <ImageView
+            android:id="@+id/img_product"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:src="@drawable/p4">
+
+        </ImageView>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <LinearLayout
+                    android:id="@+id/ll_pd_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtProductName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="15dp"
+                        android:text="Chudidar Dress"
+                        android:textColor="@color/app_black_buttons_bg_color"
+                        android:textSize="@dimen/app_eighteen_sp"
+                        android:textStyle="bold" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtStoreSoldByTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:layout_marginTop="15dp"
+                            android:text="Sold By:"
+                            android:textColor="@color/app_black_buttons_bg_color" />
+
+                        <TextView
+                            android:id="@+id/txtStoreSoldBy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_toRightOf="@id/txtStoreSoldByTitle"
+                            android:text="Venky"
+                            android:textColor="@color/app_black_buttons_bg_color" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtStorePostedTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:layout_marginTop="5dp"
+                            android:text="Posted on : "
+                            android:textColor="@color/app_black_buttons_bg_color" />
+
+                        <TextView
+                            android:id="@+id/txtStorePosted"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_toRightOf="@id/txtStorePostedTitle"
+                            android:text=" march 2017"
+                            android:textColor="@color/app_black_buttons_bg_color" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/txtStoreEPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_gravity="start"
+                        android:text="599.00 rs"
+                        android:textColor="@color/app_black_buttons_bg_color" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <!--<Button
+                        android:id="@+id/btnAddCart"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:background="@color/red"
+                        android:text="@string/addCart"
+                        android:layout_gravity="start"
+                        android:textColor="@color/app_white_buttons_bg_color" />
+-->
+                    <Button
+                        android:id="@+id/btnRemoveProduct"
+                        android:theme="@style/RemoveButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="@dimen/fivedp"
+                        android:drawableLeft="@android:drawable/ic_menu_delete"
+                        android:text="@string/removeCart"
+                        android:textAllCaps="false"
+                        android:textColor="@color/app_white_buttons_bg_color" />
+                </RelativeLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.7dp"
+        android:layout_marginTop="10dp"
+        android:background="#c0c0c0" />
+</LinearLayout>

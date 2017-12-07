@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_scv_login"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/app_ten_dp"
+    tools:context="com.purpledot.fame.activites.loginModule.LoginActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/app_twenty_dp"
+            android:text="FAME"
+            android:textColor="@color/app_black_buttons_bg_color"
+            android:textSize="@dimen/app_thirty_sp"
+            android:typeface="serif" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/app_twenty_dp"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="@dimen/app_ten_dp"
+                android:layout_weight="1"
+                android:background="@color/dash_board_gray" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Login with Robust" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/app_ten_dp"
+                android:layout_weight="1"
+                android:background="@color/dash_board_gray" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/edt_login_mobile"
+            style="@style/match_wrap"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/gray_border"
+            android:hint="Enter email/mobile"
+            android:imeOptions="actionNext"
+            android:padding="@dimen/app_ten_dp" />
+
+
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/continue_login"
+            android:theme="@style/MyButton"
+            android:textColor="@color/app_white_buttons_bg_color" />
+    </LinearLayout>
+</ScrollView>

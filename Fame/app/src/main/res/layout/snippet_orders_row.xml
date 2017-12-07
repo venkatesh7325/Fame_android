@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/fivedp"
+    android:orientation="horizontal"
+    app:cardCornerRadius="@dimen/fivedp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/fivedp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Order ID : "
+                android:textColor="@color/app_black_buttons_bg_color"
+                android:textSize="@dimen/app_eighteen_sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/order_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="#77"
+                android:textColor="@color/red"
+                android:textSize="@dimen/app_sixteen_sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Product Name : "
+                android:textSize="@dimen/app_eighteen_sp" />
+
+            <TextView
+                android:id="@+id/prodcut_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bag"
+                android:textColor="@color/app_black_buttons_bg_color"
+                android:textSize="@dimen/app_sixteen_sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Order Date : "
+                android:textSize="@dimen/app_sixteen_sp" />
+
+            <TextView
+                android:id="@+id/order_Date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sept 10,2017"
+                android:textColor="@color/app_black_buttons_bg_color"
+                android:textSize="@dimen/app_sixteen_sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Quantity : "
+                    android:textSize="@dimen/app_sixteen_sp" />
+
+                <TextView
+                    android:id="@+id/order_quantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2"
+                    android:textColor="@color/app_black_buttons_bg_color"
+                    android:textSize="@dimen/app_sixteen_sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Status : "
+                    android:textSize="@dimen/app_sixteen_sp" />
+
+                <TextView
+                    android:id="@+id/order_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Processing"
+                    android:textColor="@color/app_black_buttons_bg_color"
+                    android:textSize="@dimen/app_sixteen_sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Price : "
+                android:textSize="@dimen/app_eighteen_sp" />
+
+            <TextView
+                android:id="@+id/order_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="599.00 Rs"
+                android:textColor="@color/app_black_buttons_bg_color"
+                android:textSize="@dimen/app_eighteen_sp" />
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>

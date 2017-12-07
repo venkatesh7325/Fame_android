@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_otp_activity"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/app_ten_dp"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context="com.purpledot.fame.activites.loginModule.OtpValidateActivity">
+
+    <EditText
+        android:id="@+id/edt_otp"
+        style="@style/match_wrap"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/gray_border"
+        android:hint="Enter OTP"
+        android:imeOptions="actionGo"
+        android:inputType="number"
+        android:maxLength="6"
+        android:padding="@dimen/app_ten_dp" />
+
+    <TextView
+        android:id="@+id/tv_resend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/fivedp"
+        android:text="@string/resend"
+        android:textAlignment="textEnd"
+        android:textColor="@color/colorPrimary"
+        android:layout_gravity="end" />
+
+
+    <Button
+        android:id="@+id/btn_otp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/sign_in"
+        android:textColor="@color/app_white_buttons_bg_color"
+        android:theme="@style/MyButton" />
+</LinearLayout>

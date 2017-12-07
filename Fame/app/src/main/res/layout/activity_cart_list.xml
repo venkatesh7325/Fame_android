@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.purpledot.fame.activites.productModule.CartListActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/app_ten_dp">
+
+            <TextView
+                android:id="@+id/tv_cart_items"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/fivedp"
+                android:text="Cart Subtotal(4 Items) : "
+                android:textColor="@color/app_black_buttons_bg_color"
+                android:textSize="@dimen/app_eighteen_sp" />
+
+            <TextView
+                android:id="@+id/tv_cart_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/tv_cart_items"
+                android:text="5,0123.00"
+                android:textColor="@color/red"
+                android:textSize="@dimen/app_eighteen_sp" />
+        </RelativeLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/app_ten_dp"
+            android:layout_marginRight="@dimen/app_ten_dp"
+            android:background="@android:color/holo_orange_light"
+            android:text="Proceed to Checkout"
+            android:textAllCaps="false"
+            android:textSize="@dimen/app_eighteen_sp"
+            android:textColor="@color/app_white_buttons_bg_color" />
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rcv_cart_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/app_ten_dp" />
+
+</LinearLayout>

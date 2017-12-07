@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.purpledot.fame.activites.DashBoardActivity"
+    tools:showIn="@layout/app_bar_dash_board">
+
+    <LinearLayout
+        android:id="@+id/ll_banner"
+        style="@style/AppTheme"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="vertical"
+        android:weightSum="3">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pager"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2.6" />
+
+        <com.viewpagerindicator.CirclePageIndicator
+            android:id="@+id/indicator"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".1"
+            android:gravity="bottom"
+            android:padding="5dip"
+            android:visibility="gone"
+            app:centered="true"
+            app:fillColor="@color/colorPrimary"
+            app:pageColor="@color/dash_board_gray"
+            app:snap="false" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_add_new_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/app_white_buttons_bg_color"
+        android:padding="@dimen/app_fifteen_dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/addAddress"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/app_eighteen_sp" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true" />
+</LinearLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_dash"
+            android:title="@string/dashboard" />
+        <item
+            android:id="@+id/nav_market_place"
+            android:title="@string/market_place"/>
+        <item
+            android:id="@+id/nav_orders"
+            android:title="@string/orders" />
+        <item
+            android:id="@+id/nav_address"
+            android:title="@string/address" />
+        <item
+            android:id="@+id/nav_fav"
+            android:title="@string/fav" />
+        <item
+            android:id="@+id/nav_account_details"
+            android:title="@string/account_details" />
+        <item
+            android:id="@+id/nav_pre_orders"
+            android:title="@string/pre_order" />
+        <item
+            android:id="@+id/nav_logout"
+            android:title="@string/logout" />
+    </group>
+</menu>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/fivedp"
+    android:orientation="horizontal"
+    app:cardCornerRadius="@dimen/fivedp">
+
+    <LinearLayout
+        android:id="@+id/ll_new_arrivals"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <ImageView
+            android:id="@+id/img_product"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:src="@drawable/p4" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/fivedp"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Product Name : "
+                android:textColor="@color/app_black_buttons_bg_color"
+                android:textSize="@dimen/app_eighteen_sp" />
+
+            <TextView
+                android:id="@+id/prodcut_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Splatter Print Shirt"
+                android:textSize="@dimen/app_eighteen_sp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/fivedp"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Price : "
+                android:textColor="@color/app_black_buttons_bg_color"
+                android:textSize="@dimen/app_eighteen_sp" />
+
+            <TextView
+                android:id="@+id/order_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="599.00 Rs"
+                android:textColor="@color/app_black_buttons_bg_color"
+                android:textSize="@dimen/app_eighteen_sp" />
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>
