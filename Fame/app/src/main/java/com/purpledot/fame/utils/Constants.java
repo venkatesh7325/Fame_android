@@ -11,7 +11,7 @@ public class Constants {
     public static final String CLASSTIME_PREF = "ADMIN_PREF";
     public static final String MAIN_URL = "";
     public static final String no_internet_connection = "Please check your connection and try again.";
-    public static final String something_went_wrong = "Some thing went wrong";
+    public static final String something_went_wrong = "Oops! Some thing went wrong ";
     public static final String STATISTICS_URL = "http://worldonhire.com/fame-dashboard/html/fame/index.php?";
 
     public static Date CURRENT_DATE;

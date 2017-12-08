@@ -103,19 +103,22 @@ public class DashBoardActivity extends AppCompatActivity implements NavigationVi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dash_board);
         prefManager = new SharedPrefManager(this);
+
         bindToolbar();  // set up toolbar
         initSlideImages(); //  slide images
         setUpNavigationDrawer(); // side menu
+
         if (Utility.isConnectingToInternet(this))
             callApiToGetUserDetails(); // call API to get user details
         else
             ToastUtils.displayToast(Constants.no_internet_connection, this);
 
-        //  getIMEINum();
+        //getIMEINum();
         int cartCount = prefManager.getCartCount(); // get the cart count from pref
         showCartCount(cartCount); // Show cart count in toolbar
-        InflateFirstTimeFragment(DashBoardFragment.newInstance("", ""), "0", true);
-        //IMEI 0--354865076059565--IMEI 1--354865076059573
+        llBanners.setVisibility(View.GONE);
+        InflateFirstTimeFragment(MarketPlaceFragment.newInstance("", ""), "0", true);
+        // IMEI 0--354865076059565--IMEI 1--354865076059573
     }
 
     @Override
@@ -467,17 +470,15 @@ public class DashBoardActivity extends AppCompatActivity implements NavigationVi
                 Gson gson = new Gson();
                 UserDetailsModel userDetailsModel = gson.fromJson(response, UserDetailsModel.class);
                 if ("1".equalsIgnoreCase(userDetailsModel.getStatus())) {
-                    // ToastUtils.displayToast(userDetailsModel.getMessage(), DashBoardActivity.this);
                     if (userDetailsModel.getEmail() == null)
                         return;
 
-                    Log.d(TAG, "EMAIL--" + userDetailsModel.getEmail() + "--Mobile--" + userDetailsModel.getMobile());
+                    Log.d(TAG, " -- EMAIL -- < -- > " + userDetailsModel.getEmail() + "--Mobile--" + userDetailsModel.getMobile());
                     prefManager.saveEmail(DashBoardActivity.this, userDetailsModel.getEmail());
                     tvHeaderUserEmail.setText(userDetailsModel.getEmail());
                     tvHeaderUserName.setText(userDetailsModel.getName());
                 } else {
                     ToastUtils.displayToast(userDetailsModel.getMessage(), DashBoardActivity.this);
-
                 }
             }
 

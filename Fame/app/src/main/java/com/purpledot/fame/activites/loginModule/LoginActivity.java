@@ -118,6 +118,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_login:
+                Utility.hideKeyBoard(LoginActivity.this);
                 if (Utility.isConnectingToInternet(this))
                     validateAndLogin(); // Validate the login and call Login API
                 else
@@ -130,6 +131,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private void validateAndLogin() {
         try {
+
             getIMEINum();
             //Log.d(TAG,"Dual SIM serial numbers"+getOutput(LoginActivity.this,))
             final String mobile = edtMobile.getText().toString().trim();
@@ -161,11 +163,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         startActivity(new Intent(LoginActivity.this, OtpValidateActivity.class));
                     } else {
                         if (successResponsePojo.getMessage().equalsIgnoreCase("Please login from your registered device!")) {
-                            ToastUtils.displayToast("Your selected sim was not linked with FAME", LoginActivity.this);
-                        } else
-                            ToastUtils.displayToast(successResponsePojo.getMessage(), LoginActivity.this);
+                            loginWithRegMobilePopup();
+                        } else {
+                            Snackbar.make(scrollView, successResponsePojo.getMessage(), Snackbar.LENGTH_LONG).show();
+                        }
                     }
                 }
+
                 @Override
                 public void onFailed(String message) {
                     ToastUtils.displayToast(Constants.something_went_wrong, LoginActivity.this);
@@ -177,7 +181,25 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
     }
 
-    private static String getOutput(Context context, String methodName, int slotId) {
+    void loginWithRegMobilePopup() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Alert!");
+        builder.setMessage("Your selected sim was not linked with FAME");
+        builder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                LoginActivity.this.finish();
+            }
+        });
+        AlertDialog alertDialog1 = builder.create();
+        if (alertDialog1.getWindow() != null && alertDialog1.getWindow().getAttributes() != null)
+            alertDialog1.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation_2;
+
+        alertDialog1.show();
+    }
+
+
+    /*private static String getOutput(Context context, String methodName, int slotId) {
         TelephonyManager telephony = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
         Class<?> telephonyClass;
         String reflectionMethod = null;
@@ -254,19 +276,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
         //Log.i("Reflection", "Result: " + result);
         return result;
-    }
-
-    void loginWithRegMobilePopup() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Alert!");
-        builder.setMessage("Please Login with register Mobile or Email with FAME");
-        builder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-
-            }
-        });
-    }
+    }*/
 
 
 }
