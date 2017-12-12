@@ -49,11 +49,12 @@
             android:src="@drawable/sim_one" />
 
         <TextView
+            android:id="@+id/tv_sim1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="@dimen/app_ten_dp"
-            android:text="SIM 1"
+            android:text="SIM 1\nvodaphone"
             android:textColor="@color/app_black_buttons_bg_color"
             android:textSize="@dimen/app_eighteen_sp" />
 
@@ -75,6 +76,7 @@
             android:src="@drawable/sim_two" />
 
         <TextView
+            android:id="@+id/tv_sim2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"

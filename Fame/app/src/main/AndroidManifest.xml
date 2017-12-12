@@ -51,6 +51,7 @@
             android:label="@string/title_activity_choose_sim"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activites.productModule.ProductsFilterActivity"></activity>
     </application>
 
 </manifest>

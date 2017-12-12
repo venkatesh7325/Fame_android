@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.purpledot.fame.activites.productModule.ProductsFilterActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/app_ten_dp"
+        android:orientation="vertical">
+
+        <com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar
+            android:id="@+id/rangeSeekbar1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fivedp"
+            app:bar_color="#F7BB88"
+            app:bar_highlight_color="#E07416"
+            app:max_value="500"
+            app:min_value="100"
+            app:steps="5" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_min"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/fivedp"
+                android:text="100"
+                android:textColor="@color/app_black_buttons_bg_color" />
+
+            <TextView
+                android:id="@+id/tv_max"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_margin="@dimen/fivedp"
+                android:text="500"
+                android:textColor="@color/app_black_buttons_bg_color" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentBottom="true"
+        android:background="#E07416"
+        android:elevation="@dimen/app_ten_dp"
+        android:gravity="bottom">
+
+        <TextView
+            android:id="@+id/tv_filter_apply"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:paddingLeft="@dimen/app_ten_dp"
+            android:paddingRight="@dimen/app_ten_dp"
+            android:text="APPLY"
+            android:textColor="@color/app_white_buttons_bg_color"
+            android:textStyle="bold" />
+    </RelativeLayout>
+</RelativeLayout>

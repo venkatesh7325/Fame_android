@@ -49,6 +49,7 @@ import com.purpledot.fame.R;
 import com.purpledot.fame.activites.loginModule.LoginActivity;
 import com.purpledot.fame.activites.loginModule.OtpValidateActivity;
 import com.purpledot.fame.activites.productModule.CartListActivity;
+import com.purpledot.fame.activites.productModule.ProductsFilterActivity;
 import com.purpledot.fame.adapters.SildePageAdapter;
 import com.purpledot.fame.fragments.dashboardFragments.AddNewAddressFragment;
 import com.purpledot.fame.fragments.dashboardFragments.AddressListFragment;
@@ -119,6 +120,7 @@ public class DashBoardActivity extends AppCompatActivity implements NavigationVi
         llBanners.setVisibility(View.GONE);
         InflateFirstTimeFragment(MarketPlaceFragment.newInstance("", ""), "0", true);
         // IMEI 0--354865076059565--IMEI 1--354865076059573
+
     }
 
     @Override
@@ -149,31 +151,6 @@ public class DashBoardActivity extends AppCompatActivity implements NavigationVi
             }
         });
     }
-
-    private void getImeiNum() {
-        try {
-            TelephonyManager tMgr = (TelephonyManager) getApplicationContext().getSystemService(Context.TELEPHONY_SERVICE);
-            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
-                // TODO: Consider calling
-                // ActivityCompat#requestPermissions
-                // here to request the missing permissions, and then overriding
-                // public void onRequestPermissionsResult(int requestCode, String[] permissions,int[] grantResults)
-                // To handle the case where the user grants the permission. See the documentation
-                // for ActivityCompat#requestPermissions for more details.
-                return;
-            }
-            if (tMgr != null) {
-                Log.i(TAG, "IMEI 0--" + tMgr.getImei(0) + "--IMEI 1--" + tMgr.getImei(1));
-                //   Log.i(TAG, "IMEI 0--" + tMgr.getSimState(0) + "--IMEI 1--" + tMgr.getSimState(1));
-            }
-
-            // IMEI--354865076059565
-            // Sim number--89918610400020222197
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
     void bindToolbar() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

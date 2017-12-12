@@ -1,7 +1,10 @@
 package com.purpledot.fame.fragments.dashboardFragments;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -15,8 +18,13 @@ import android.view.animation.Animation;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.crystal.crystalrangeseekbar.interfaces.OnRangeSeekbarChangeListener;
+import com.crystal.crystalrangeseekbar.interfaces.OnRangeSeekbarFinalValueListener;
+import com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar;
 import com.purpledot.fame.POJO.products.productsList.Product;
 import com.purpledot.fame.R;
+import com.purpledot.fame.activites.DashBoardActivity;
+import com.purpledot.fame.activites.productModule.ProductsFilterActivity;
 import com.purpledot.fame.adapters.MarketPlaceAdapter;
 import com.purpledot.fame.interfaces.AddToCartClickResponse;
 
@@ -46,6 +54,8 @@ public class MarketPlaceFragment extends Fragment implements AddToCartClickRespo
     List<Product> filteredList;
     EditText edtSearchProductsList;
     MarketPlaceAdapter marketPlaceAdapter;
+    FloatingActionButton floatingActionButton;
+    public static final int APPLY_REQUEST_CODE = 94;
 
     public MarketPlaceFragment() {
         // Required empty public constructor
@@ -89,6 +99,7 @@ public class MarketPlaceFragment extends Fragment implements AddToCartClickRespo
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_market_place, container, false);
+        floatingActionButton = view.findViewById(R.id.fab);
         rcvMarketPlace = view.findViewById(R.id.rcv_market_place_products);
         edtSearchProductsList = view.findViewById(R.id.edt_search);
         edtSearchProductsList.setCursorVisible(false);
@@ -101,7 +112,6 @@ public class MarketPlaceFragment extends Fragment implements AddToCartClickRespo
         edtSearchProductsList.addTextChangedListener(new TextWatcher() {
             @Override
             public void onTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
-                // TODO Auto-generated method stub
                 marketPlaceAdapter.getFilter().filter(arg0.toString());
             }
 
@@ -117,8 +127,41 @@ public class MarketPlaceFragment extends Fragment implements AddToCartClickRespo
 
             }
         });
+
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), ProductsFilterActivity.class);
+                getActivity().startActivityForResult(i, APPLY_REQUEST_CODE);
+            }
+        });
+        hideShowFab();
         setData();
         return view;
+    }
+
+    void hideShowFab() {
+        rcvMarketPlace.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                if (dy > 0) {
+                    floatingActionButton.hide();
+                } else {
+                    floatingActionButton.show();
+                }
+                super.onScrolled(recyclerView, dx, dy);
+            }
+
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                if (newState == RecyclerView.SCROLL_STATE_IDLE) {
+                    floatingActionButton.show();
+                }
+
+                super.onScrollStateChanged(recyclerView, newState);
+            }
+        });
+
     }
 
     private void setData() {
@@ -146,7 +189,7 @@ public class MarketPlaceFragment extends Fragment implements AddToCartClickRespo
         productList.add(new Product("75", "Chudidar 1", "999.00", "red,blue,green", "Sushil"));
         productList.add(new Product("52", "Short Tops", "199.00", "blue", "Vinita"));
         productList.add(new Product("623", "Chudidar 5", "399.00", "red", "venky"));
-        setAdapter(productList);
+        filterProductsBasedOnPrices(100, 800, productList);
     }
 
     private void setAdapter(List<Product> productList) {
@@ -155,7 +198,6 @@ public class MarketPlaceFragment extends Fragment implements AddToCartClickRespo
             filteredList.addAll(productList);
             rcvMarketPlace.setLayoutManager(new LinearLayoutManager(getActivity()));
             marketPlaceAdapter = new MarketPlaceAdapter(getActivity(), this, productList, filteredList);
-         //   rcvMarketPlace.setAnimation((Animation) getResources().getAnimation(R.anim.fade_in));
             rcvMarketPlace.setAdapter(marketPlaceAdapter);
         } catch (Exception e) {
             e.printStackTrace();
@@ -167,7 +209,6 @@ public class MarketPlaceFragment extends Fragment implements AddToCartClickRespo
         Log.d("FRAG", "Fragment count--" + count);
         showCartCount(count);
     }
-
 
     private void showCartCount(int cartCount) {
         try {
@@ -181,6 +222,45 @@ public class MarketPlaceFragment extends Fragment implements AddToCartClickRespo
             }
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    private void filterProductsBasedOnPrices(double minValue, double maxValue, List<Product> productList) {
+        try {
+            List<Product> tempProductList = new ArrayList<>();
+            for (int i = 0; i < productList.size(); i++) {
+                double actualPrice = Double.parseDouble(productList.get(i).getProductPrice().replace(".00", ""));
+                if (actualPrice >= minValue && actualPrice <= maxValue) {
+                    tempProductList.add(productList.get(i));
+                }
+            }
+            if (!tempProductList.isEmpty() && tempProductList.size() > 0)
+                setAdapter(tempProductList);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Log.d(TAG, "-request code-" + requestCode + "-result code-" + resultCode);
+        switch (requestCode) {
+            case APPLY_REQUEST_CODE:
+                String result = data.getStringExtra("result");
+                Log.d(TAG, "---1 result 2 ---" + result);
+              /*  if (resultCode == Activity.RESULT_OK) {
+                    String result = data.getStringExtra("result");
+                    Log.d(TAG, "--- result ---" + result);
+                }
+                if (resultCode == Activity.RESULT_CANCELED) {
+                    //Write your code if there's no result
+                    Log.d(TAG, "--- result Cancelled ---");
+                }*/
+                break;
+            default:
+                break;
         }
     }
 }
